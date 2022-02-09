@@ -556,6 +556,8 @@ class VkImageObj : public vk_testing::Image {
     void SetLayout(VkCommandBufferObj *cmd_buf, VkImageAspectFlags aspect, VkImageLayout image_layout);
     void SetLayout(VkImageAspectFlags aspect, VkImageLayout image_layout);
 
+    void TrackLayout(VkImageLayout imageLayout) { m_descriptorImageInfo.imageLayout = imageLayout; }
+
     VkImageLayout Layout() const { return m_descriptorImageInfo.imageLayout; }
     uint32_t width() const { return extent().width; }
     uint32_t height() const { return extent().height; }

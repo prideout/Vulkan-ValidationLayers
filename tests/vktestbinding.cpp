@@ -260,6 +260,7 @@ void Device::init(std::vector<const char *> &extensions, VkPhysicalDeviceFeature
     }
 
     enabled_extensions_ = extensions;
+    extensions.push_back("VK_KHR_portability_subset"); // prideout
 
     VkDeviceCreateInfo dev_info = {};
     dev_info.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;

@@ -468,10 +468,10 @@ void VkRenderFramework::InitFramework(void * /*unused compatibility parameter*/,
 
     static bool driver_printed = false;
     static bool print_driver_info = GetEnvironment("VK_LAYER_TESTS_PRINT_DRIVER") != "";
-    if (print_driver_info && !driver_printed &&
-        InstanceExtensionSupported(VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME)) {
+    // if (print_driver_info && !driver_printed &&
+    //     InstanceExtensionSupported(VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME)) {
         instance_extensions_.push_back(VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME);
-    }
+    // }
 
     RemoveIf(instance_layers_, LayerNotSupportedWithReporting);
     RemoveIf(instance_extensions_, ExtensionNotSupportedWithReporting);

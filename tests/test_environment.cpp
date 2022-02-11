@@ -99,6 +99,9 @@ void Environment::SetUp() {
         ASSERT_EQ(extFound, 1) << "ERROR: Cannot find extension named " << instance_extension_names[i]
                                << " which is necessary to pass this test";
     }
+
+    instance_extension_names.push_back("VK_KHR_get_physical_device_properties2"); // prideout
+
     VkInstanceCreateInfo inst_info = {};
     inst_info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
     inst_info.pNext = NULL;
